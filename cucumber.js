@@ -3,6 +3,6 @@ module.exports = {
     require: ['src/hooks/**/*.ts', 'src/steps/**/*.ts'],
     requireModule: ['ts-node/register'],
     paths: ['src/features/**/*.feature'],
-    format: ['progress', 'html:reports/cucumber-report.html'],
+    format: ['progress', 'allure-cucumberjs/reporter'],
   },
 };

@@ -1,5 +1,7 @@
 # DemoWebShop — Automatización E2E
 
+[![CI](https://github.com/lexanderdev/demowebshop-playwright/actions/workflows/CI.yml/badge.svg)](https://github.com/lexanderdev/demowebshop-playwright/actions/workflows/CI.yml)
+
 Proyecto de automatización de pruebas end-to-end para la tienda [DemoWebShop de Tricentis](https://demowebshop.tricentis.com/), cubriendo los flujos de autenticación y compra completa.
 
 ---
@@ -13,6 +15,36 @@ Proyecto de automatización de pruebas end-to-end para la tienda [DemoWebShop de
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
 ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+
+---
+
+## Estrategia de ramas
+
+El proyecto usa un flujo de trabajo con dos ramas principales:
+
+| Rama | Propósito |
+|---|---|
+| `main` | Código estable y listo para producción |
+| `develop` | Rama de desarrollo — los cambios se integran aquí primero |
+
+### Protección de la rama `main`
+
+La rama `main` tiene las siguientes reglas de protección configuradas en GitHub:
+
+| Regla | Descripción |
+|---|---|
+| Require a pull request before merging | Todo cambio debe entrar por Pull Request — no se permite push directo |
+| Require status checks to pass | El pipeline de CI debe pasar (tests en verde) antes de permitir el merge |
+
+---
+
+## Reporte de resultados
+
+Los resultados de cada ejecución se publican automáticamente en **Allure Report** a través de GitHub Pages. Allure genera un reporte visual e interactivo que muestra el estado de cada escenario, pasos ejecutados, duración y trazabilidad completa.
+
+El reporte se actualiza en cada push a `main` y está disponible en:
+
+**[Ver reporte Allure](https://lexanderdev.github.io/demowebshop-playwright/)**
 
 ---
 

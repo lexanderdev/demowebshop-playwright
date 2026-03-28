@@ -1,5 +1,4 @@
 Feature: Registro de usuario
-
   Como usuario nuevo
   Quiero registrarme en la tienda DemoWebShop
   Para poder realizar compras en línea

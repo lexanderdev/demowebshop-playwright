@@ -155,6 +155,39 @@ Firestore (Firebase)
   pages/*.ts          ← interactúa con el navegador usando los datos
 ```
 
+---
+
+## Datos de prueba en Firestore
+
+Los datos de prueba se almacenan en Firebase Firestore y son consumidos por los helpers del proyecto. A continuación se describe la estructura esperada por colección.
+
+### Colección `addresses/`
+
+Contiene las direcciones de envío utilizadas durante el proceso de checkout.
+
+| Documento | Campo | Tipo | Descripción |
+|---|---|---|---|
+| `defaultAddress` | `country` | string | País de entrega |
+| | `city` | string | Ciudad de entrega |
+| | `address` | string | Dirección completa |
+| | `zip` | string | Código postal |
+| | `phoneNumber` | string | Teléfono de contacto (opcional) |
+
+### Colección `paymentMethods/`
+
+Contiene los datos de tarjetas de crédito utilizados en el pago.
+
+| Documento | Campo | Tipo | Descripción |
+|---|---|---|---|
+| `defaultCard` | `cardType` | string | Tipo de tarjeta (ej. Visa) |
+| | `cardholderName` | string | Nombre del titular |
+| | `cardNumber` | string | Número de la tarjeta |
+| | `expirationMonth` | string | Mes de expiración (ej. 04) |
+| | `expirationYear` | string | Año de expiración (ej. 2027) |
+| | `cardCode` | string | Código de seguridad CVV |
+
+---
+
 ### Patrón Page Object Model
 
 Cada página de la aplicación tiene su propia clase en `pages/`. Esto garantiza que si la UI cambia, solo hay que actualizar un único archivo sin tocar los tests.

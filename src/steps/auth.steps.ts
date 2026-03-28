@@ -15,13 +15,6 @@ Given('estoy en la página principal', async () => {
   await homePage.goto();
 });
 
-// Desde la página principal, da clic en "Log in" y llena las credenciales
-When('doy clic en Log in e ingreso las credenciales de {string}', async (userKey: string) => {
-  const data = await getUser(userKey);
-  loginPage = new LoginPage(fixture.page);
-  await loginPage.goto();
-  await loginPage.doLogin(data.user, data.password);
-});
 
 // Desde la página principal, da clic en "Register" y completa el formulario
 // El email se genera con timestamp para evitar duplicados entre ejecuciones
@@ -43,4 +36,12 @@ When('doy clic en Register y completo el formulario con el usuario {string}', as
 // Valida el mensaje "Your registration completed"
 Then('debería ver el mensaje de registro exitoso', async () => {
   await registerPage.validateRegistered();
+});
+
+// Desde la página principal, da clic en "Log in" y llena las credenciales
+When('doy clic en Log in e ingreso las credenciales de {string}', async (userKey: string) => {
+  const data = await getUser(userKey);
+  loginPage = new LoginPage(fixture.page);
+  await loginPage.goto();
+  await loginPage.doLogin(data.user, data.password);
 });

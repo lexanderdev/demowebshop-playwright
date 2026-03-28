@@ -12,8 +12,10 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 
-# Cucumber
+# Cucumber / Allure
 /reports/
+/allure-results/
+/allure-report/
 
 # macOS
 .DS_Store

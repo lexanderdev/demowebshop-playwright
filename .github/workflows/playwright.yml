@@ -1,11 +1,16 @@
-name: Playwright Tests
+name: E2E Tests — DemoWebShop
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request:
-    branches: [main, master]
+    branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   test:
@@ -27,18 +32,22 @@ jobs:
       - name: Instalar navegadores Playwright
         run: npx playwright install --with-deps chromium
 
-      - name: Ejecutar tests Playwright
-        run: npm test
+      - name: Ejecutar tests Cucumber
+        run: npm run test:cucumber
         env:
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
           FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
           FIREBASE_PRIVATE_KEY: ${{ secrets.FIREBASE_PRIVATE_KEY }}
           BASE_URL: https://demowebshop.tricentis.com/
 
-      - name: Subir reporte HTML
-        uses: actions/upload-artifact@v4
+      - name: Generar reporte Allure
         if: always()
+        run: npm run allure:generate
+
+      - name: Publicar reporte en GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 15
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-report
+          publish_branch: gh-pages

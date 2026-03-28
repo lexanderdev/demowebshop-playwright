@@ -4,5 +4,6 @@ module.exports = {
     requireModule: ['ts-node/register'],
     paths: ['src/features/**/*.feature'],
     format: ['progress', 'allure-cucumberjs/reporter'],
+    parallel: 2,
   },
 };

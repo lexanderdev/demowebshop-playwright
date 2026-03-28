@@ -1,7 +1,7 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"Como usuario nuevo
-  Quiero registrarme en la tienda DemoWebShop
-  Para poder realizar compras en línea","3335","Registro exitoso con datos válidos","","2026-03-28","passed","2026-03-28","","","",""
 "Como usuario registrado
   Quiero comprar un producto en la tienda DemoWebShop
-  Para recibirlo en mi domicilio","8969","Compra exitosa de computador con tarjeta de crédito","","2026-03-28","passed","2026-03-28","","","",""
+  Para recibirlo en mi domicilio","11660","Compra exitosa de computador con tarjeta de crédito","","2026-03-28","passed","2026-03-28","","","",""
+"Como usuario nuevo
+  Quiero registrarme en la tienda DemoWebShop
+  Para poder realizar compras en línea","4185","Registro exitoso con datos válidos","","2026-03-28","passed","2026-03-28","","","",""

@@ -12,6 +12,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -31,12 +34,6 @@ jobs:
 
       - name: Instalar navegadores Playwright
         run: npx playwright install --with-deps chromium
-
-      - name: Verificar variables de entorno
-        run: |
-          echo "FIREBASE_PROJECT_ID set: ${{ secrets.FIREBASE_PROJECT_ID != '' }}"
-          echo "FIREBASE_CLIENT_EMAIL set: ${{ secrets.FIREBASE_CLIENT_EMAIL != '' }}"
-          echo "FIREBASE_PRIVATE_KEY set: ${{ secrets.FIREBASE_PRIVATE_KEY != '' }}"
 
       - name: Ejecutar tests Cucumber
         run: npm run test:cucumber

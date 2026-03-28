@@ -1,0 +1,19 @@
+
+# Dependencias
+node_modules/
+
+# Variables de entorno — credenciales sensibles
+.env
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Cucumber
+/reports/
+
+# macOS
+.DS_Store

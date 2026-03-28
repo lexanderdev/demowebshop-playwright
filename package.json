@@ -1,0 +1,31 @@
+{
+  "name": "demowebshop-playwright",
+  "version": "1.0.0",
+  "description": "Automatización E2E para DemoWebShop con Playwright + POM + BDD",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:headed": "playwright test --headed",
+    "test:cucumber": "cucumber-js",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.7.0",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
+    "dotenv": "^17.3.1",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.10.1",
+    "prettier": "^3.8.1",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.7.0"
+  }
+}
